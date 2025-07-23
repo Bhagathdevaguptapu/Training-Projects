@@ -1,0 +1,29 @@
+<p>student works!</p>
+<a href="home" style="margin-left: 10px;">home</a>
+<br /><br /><br />
+
+<table style="border-collapse: collapse; width: 600px; text-align: left;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th style="border: 1px solid #ccc; padding: 8px;">Id</th>
+      <th style="border: 1px solid #ccc; padding: 8px;">Name</th>
+      <th style="border: 1px solid #ccc; padding: 8px;">Marks</th>
+      <th style="border: 1px solid #ccc; padding: 8px;">Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="students.length === 0">
+      <td colspan="4" style="border: 1px solid #ccc; padding: 8px; text-align: center; font-style: italic;">
+        No Students Data available
+      </td>
+    </tr>
+    <tr *ngFor="let student of students">
+      <td style="border: 1px solid #ccc; padding: 8px;">{{student.id}}</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">{{student.name}}</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">{{student.marks}}</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">
+        {{ student.marks <= 50 ? 'F' : student.marks <= 75 ? 'P' : 'O' }}
+      </td>
+    </tr>
+  </tbody>
+</table>

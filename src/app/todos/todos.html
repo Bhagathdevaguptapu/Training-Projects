@@ -1,0 +1,6 @@
+<ul>
+    @for(task of activities;track task){
+        <li>{{task}}</li>
+    }
+</ul>
+<app-activity (sendActivity)="receiveActivity($event)"></app-activity>

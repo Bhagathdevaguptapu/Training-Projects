@@ -1,0 +1,19 @@
+<p>contact works!</p>
+
+<!-- Search Box -->
+<input type="text" [(ngModel)]="searchName" placeholder="Search by name" />
+
+<!-- Add Contact Form (Person Component) -->
+<app-person (personAdded)="addContact($event)"></app-person>
+
+<!-- Display Contact List -->
+<ul *ngIf="filteredContacts.length > 0">
+  <li *ngFor="let contact of filteredContacts; let i = index">
+    {{ contact.name }} - {{ contact.number }}
+    <button (click)="deleteContact(i)">Delete</button>
+  </li>
+</ul>
+
+<p *ngIf="filteredContacts.length === 0" style="font-style: italic;">
+  No matching contacts found.
+</p>
